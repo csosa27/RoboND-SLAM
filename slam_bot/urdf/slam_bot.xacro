@@ -3,14 +3,8 @@
 
 <robot name="slam_bot" xmlns:xacro="http://www.ros.org/wiki/xacro">
   <xacro:include filename="$(find slam_bot)/urdf/slam_bot.gazebo"/>
+  
   <link name="robot_footprint"></link>
-
-  <joint name="robot_footprint_joint" type="fixed">
-    <origin xyz="0 0 0" rpy="0 0 0" />
-    <parent link="robot_footprint"/>
-    <child link="chassis" />
-  </joint>
-
 
   <!-- Chassis Link -->
   <link name='chassis'>
@@ -156,7 +150,7 @@
 
   <!-- Camera Link -->
 
-  <link name="camera_link">
+  <link name="camera">
 
     <inertial>
       <mass value="0.1"/>
@@ -213,6 +207,12 @@
 
   <!-- Joints -->
 
+  <joint name="robot_footprint_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="robot_footprint"/>
+    <child link="chassis" />
+  </joint>
+
   <joint type="continuous" name="left_wheel_hinge">
     <origin xyz="0 0.25 0" rpy="0 0 0"/>
     <child link="left_wheel"/>
@@ -231,11 +231,18 @@
     <joint_properties damping="1.0" friction="1.0"/>
   </joint>
 
-  <joint type="fixed" name="camera_joint">
+  <joint type="fixed" name="camera_link">
     <origin xyz="0.25 0 0" rpy="0 0 0"/>
-    <child link="camera_link"/>
+    <child link="camera"/>
     <parent link="chassis"/>
   </joint>
+
+  <joint name="camera_joint" type="fixed">
+      <origin xyz="0 0 0" rpy="-1.5707 0 -1.5707"/>
+      <parent link="camera"/>
+      <child link="camera_rgbd_frame"/>
+  </joint>
+  <link name="camera_rgbd_frame"/>
 
   <joint type="fixed" name="hokuyo_joint">
     <origin xyz="0.0 0 0.1" rpy="0 0 0"/>
