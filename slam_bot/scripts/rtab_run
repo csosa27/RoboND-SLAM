@@ -1,4 +1,6 @@
 #! /bin/bash
+#import roslib
+#roslib.load_manifest('rtab_run')
 
 echo ' '
 read -p 'Would you like to clear the previous map database? (y/n): ' ansinput
