@@ -199,7 +199,7 @@
     </visual>
     <collision>
       <geometry>
-        <box size="0.1 0.1 0.1"/>
+        <box size="0.2 0.2 0.2"/>
       </geometry>
       <origin xyz="0 0 0" rpy="0 0 0"/>
     </collision>
@@ -245,7 +245,7 @@
   <link name="camera_rgbd_frame"/>
 
   <joint type="fixed" name="hokuyo_joint">
-    <origin xyz="0.0 0 0.1" rpy="0 0 0"/>
+    <origin xyz="0.0 0 0.2" rpy="0 0 0"/>
     <child link="hokuyo"/>
     <parent link="chassis"/>
   </joint>
