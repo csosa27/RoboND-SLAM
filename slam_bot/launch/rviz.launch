@@ -4,5 +4,5 @@
 
 <launch>
   <!--<node name="rviz" pkg="rviz" type="rviz" args="-d $(find slam_bot)/launch/config/robot_slam.rviz"/> -->
-  <node pkg="rviz" type="rviz" name="rviz" args="-d /home/workspace/catkin_ws/src/slam_bot/rviz/robot_slam.rviz"/>-->
+  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find slam_bot)/rviz/robot_slam.rviz"/>-->
 </launch>

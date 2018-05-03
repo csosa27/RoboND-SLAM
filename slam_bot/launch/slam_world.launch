@@ -12,6 +12,7 @@
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="world_name" value="$(find slam_bot)/worlds/kitchen_dining.world"/>
+    <!--<arg name="world_name" value="$(find slam_bot)/worlds/my_world.world"/>-->
     <arg name="paused" value="$(arg paused)"/>
     <arg name="use_sim_time" value="$(arg use_sim_time)"/>
     <arg name="gui" value="$(arg gui)"/>
@@ -31,7 +32,7 @@
 
   <!--launch rviz
   <node name="rviz" pkg="rviz" type="rviz" respawn="false"/>
-  <node pkg="rviz" type="rviz" name="rviz" args="-d /home/robond/catkin_ws/src/slam_bot/rviz/robot_slam.rviz"/>-->
+  <node pkg="rviz" type="rviz" name="rviz" args="-d home/nvidia/catkin_ws/src/slam_bot/rviz/robot_slam.rviz"/>-->
   
 
 
