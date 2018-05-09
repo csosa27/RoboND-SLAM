@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- csosa_bot -->
+<!-- slam_bot -->
 <launch>
 
   <include file="$(find slam_bot)/launch/robot_description.launch"/>
